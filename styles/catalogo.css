@@ -1,0 +1,276 @@
+﻿* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background:
+    url('../Imagenes/fondo.jpg') center/cover fixed no-repeat;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+:root {
+    --rojo-principal: #D30F23;
+    --rojo-oscuro: #A30B1B;
+    --rojo-brillante: #E03143;
+    --blanco: #ffffff;
+    --gris-suave: #F2F0F1;
+    --gris-claro: #E4E1E3;
+    --texto-oscuro: #1F1B1C;
+    --gris-texto: #6B6768;
+}
+
+.hero-catalogo {
+    position: relative;
+    width: 100%;
+    margin-top: 80px;
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 30px 16px 30px;
+    color: var(--blanco);
+}
+
+.hero-catalogo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-info {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    max-width: 1163px;
+}
+
+/* Search form inside hero */
+.hero-catalogo .caja-buscador {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: none;
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 1163px;
+    margin: 0 auto;
+}
+
+.hero-catalogo .input-buscar {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: var(--blanco);
+    padding: 14px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    outline: none;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+.hero-catalogo .input-buscar::placeholder { color: rgba(255,255,255,0.7); }
+.hero-catalogo .input-buscar:focus {
+    background: rgba(255,255,255,0.25);
+    border-color: var(--blanco);
+}
+
+.hero-catalogo .btn-buscar {
+    background: var(--rojo-principal);
+    border: none;
+    color: var(--blanco);
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hero-catalogo .btn-buscar:hover {
+    background: var(--rojo-oscuro);
+}
+
+.contenedor-pagina {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 20px 60px 20px;
+}
+
+.contenedor-buscador {
+    max-width: 600px;
+    margin: 0 auto 24px auto;
+    text-align: center;
+}
+
+.caja-buscador {
+    background: var(--blanco);
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+    padding: 14px;
+    display: flex;
+    gap: 10px;
+}
+
+.input-buscar {
+    padding: 12px 18px;
+    width: 100%;
+    border: 2px solid var(--gris-claro);
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-buscar:focus { border-color: var(--rojo-principal); }
+
+.btn-buscar {
+    padding: 12px 28px;
+    background: linear-gradient(135deg, var(--rojo-oscuro), var(--rojo-principal));
+    color: var(--blanco);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+.contenedor-aves {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.ave-card {
+    background: var(--blanco);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+}
+
+
+.galeria-imagen-principal {
+    position: relative;
+}
+
+.ave-imagen {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background-color: var(--gris-claro);
+    display: block;
+}
+
+.badge-catalogo {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--rojo-principal);
+    color: var(--blanco);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 999px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    letter-spacing: 0.4px;
+}
+
+.ave-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ave-info h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin: 0 0 4px 0;
+    color: var(--texto-oscuro);
+}
+
+.nombre-cientifico {
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+    color: var(--gris-texto);
+    font-size: 0.88rem;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.btn-mas {
+    display: inline-block;
+    margin-top: auto;
+    background: linear-gradient(135deg, var(--rojo-oscuro), var(--rojo-principal));
+    color: var(--blanco);
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--rojo-principal);
+}
+
+.btn-mas:hover {
+    background: var(--blanco);
+    color: var(--rojo-principal);
+}
+
+/* ============== ESTADO VACÃO ============== */
+.sin-resultados {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 24px;
+    color: var(--texto-oscuro);
+    font-size: 1.1rem;
+    background: var(--blanco);
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+}
+
+@media (max-width: 1024px) {
+    .contenedor-aves { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    .contenedor-aves { grid-template-columns: 1fr; }
+    .caja-buscador { flex-direction: column; }
+    .btn-buscar { width: 100%; }
+    .hero-info h1 { font-size: 1.7rem; }
+}
+
+*, *::before, *::after {
+    font-family: 'Roboto Slab', serif !important;
+}
+
+/* Velo translucido sobre el fondo (efecto vidrio suave) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: -1;
+    pointer-events: none;
+}

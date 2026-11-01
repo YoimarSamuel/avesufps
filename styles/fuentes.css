@@ -1,0 +1,271 @@
+/* =================================================================
+   fuentes.css  —  Fuentes y Créditos (identidad visual del sitio)
+   Paleta: rojo institucional #D30F23, blancos, Roboto Slab.
+   ================================================================= */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --rojo-principal: #D30F23;
+    --rojo-oscuro:    #A30B1B;
+    --rojo-brillante: #E03143;
+    --blanco:         #ffffff;
+    --gris-suave:     #F2F0F1;
+    --gris-claro:     #E4E1E3;
+    --texto-oscuro:   #1F1B1C;
+    --gris-texto:     #6B6768;
+}
+
+body {
+    background: url('../Imagenes/fondo.jpg') center/cover fixed no-repeat;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* ============== HERO (igual que catálogo / glosario) ============== */
+.hero-catalogo {
+    position: relative;
+    width: 100%;
+    margin-top: 80px;
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 30px 16px 30px;
+    color: var(--blanco);
+}
+
+.hero-catalogo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-info {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    max-width: 1163px;
+}
+
+.hero-info h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--blanco);
+    margin-bottom: 4px;
+}
+
+.hero-info p {
+    font-size: 1.05rem;
+    opacity: 0.92;
+    margin: 0;
+}
+
+/* ============== CONTENIDO ============== */
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 20px 60px 20px;
+}
+
+.intro-texto {
+    font-size: 1.05rem;
+    color: var(--blanco);
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+/* Títulos de sección (blancos sobre el fondo, barra roja lateral) */
+.titulo-seccion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 30px 0 16px 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--blanco);
+}
+
+.titulo-seccion::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 28px;
+    border-radius: 3px;
+    background: linear-gradient(180deg, var(--rojo-oscuro), var(--rojo-principal));
+    box-shadow: 0 2px 8px rgba(211,15,35,0.35);
+    flex-shrink: 0;
+}
+
+/* Tarjetas de contenido (idénticas a las del catálogo) */
+.seccion {
+    background: var(--blanco);
+    border-radius: 14px;
+    padding: 26px;
+    margin-bottom: 22px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+}
+
+.seccion p {
+    font-size: 0.95rem;
+    color: var(--texto-oscuro);
+    margin-bottom: 8px;
+}
+
+.seccion p:last-child { margin-bottom: 0; }
+
+/* Bloques con icono */
+.bloque-credito {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.bloque-credito .icono-svg {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+}
+
+.bloque-credito h3 {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--rojo-principal);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nombre-autor {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--texto-oscuro);
+    margin-bottom: 4px;
+}
+
+.autor-ayuda {
+    font-weight: 400;
+    font-size: .85rem;
+    color: var(--gris-texto);
+}
+
+/* Sub-bloques de notas dentro de las tarjetas */
+.nota-bloque {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: var(--gris-suave);
+    border-radius: 10px;
+    border-left: 4px solid var(--rojo-principal);
+}
+
+.nota-bloque h4 {
+    margin: 0 0 .4rem 0;
+    color: var(--rojo-principal);
+    font-size: 0.95rem;
+}
+
+.nota-bloque ul {
+    margin: 0.5rem 0;
+    padding-left: 1.2rem;
+}
+
+.nota-bloque li {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.nota-bloque.nota-cientifica { border-left-color: #2E86AB; }
+.nota-bloque.nota-cientifica h4 { color: #2E86AB; }
+
+/* ============== TABLA DE SONIDOS ============== */
+.tabla-fuentes {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.tabla-fuentes th {
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--blanco);
+    background: linear-gradient(135deg, var(--rojo-oscuro), var(--rojo-principal));
+    text-align: left;
+    padding: 12px 15px;
+    letter-spacing: 0.5px;
+}
+
+.tabla-fuentes th:first-child { border-radius: 10px 0 0 0; }
+.tabla-fuentes th:last-child { border-radius: 0 10px 0 0; }
+
+.tabla-fuentes td {
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--gris-claro);
+    vertical-align: top;
+}
+
+.tabla-fuentes tr:hover td { background: var(--gris-suave); }
+
+.tabla-fuentes td a {
+    color: var(--rojo-principal);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.tabla-fuentes td a:hover { text-decoration: underline; }
+
+.tabla-fuentes td.col-cientifico {
+    color: var(--gris-texto);
+    min-width: 200px;
+}
+
+.tabla-fuentes td.col-videoid {
+    min-width: 175px;
+    word-break: break-all;
+    font-family: monospace;
+    font-size: 0.82rem;
+}
+
+.nota {
+    font-size: 0.85rem;
+    color: var(--gris-texto);
+    margin-top: 14px;
+}
+
+/* ============== RESPONSIVE ============== */
+@media (max-width: 768px) {
+    .hero-info h1 { font-size: 1.8rem; }
+    .titulo-seccion { font-size: 1.2rem; }
+    .seccion { padding: 20px; }
+    .bloque-credito { flex-direction: column; align-items: flex-start; }
+    .tabla-fuentes { display: block; overflow-x: auto; }
+    .tabla-fuentes td { font-size: 0.78rem; padding: 8px 6px; }
+    .tabla-fuentes td.col-cientifico { min-width: 140px; }
+    .tabla-fuentes td.col-videoid { min-width: 115px; }
+}
+
+*, *::before, *::after {
+    font-family: 'Roboto Slab', serif !important;
+}
+
+/* Velo translucido sobre el fondo (efecto vidrio suave) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: -1;
+    pointer-events: none;
+}

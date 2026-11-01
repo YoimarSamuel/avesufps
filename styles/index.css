@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background:
+        linear-gradient(135deg, rgba(163,11,27,0.85) 0%, rgba(211,15,35,0.7) 60%, rgba(224,49,67,0.6) 100%),
+        url('../Imagenes/fondo.jpg') center/cover fixed no-repeat;
+    font-family: 'Roboto Slab', serif;
+    color: #333;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+:root {
+    --rojo-principal: #D30F23;
+    --rojo-oscuro: #A30B1B;
+    --rojo-brillante: #E03143;
+    --blanco: #ffffff;
+    --gris-suave: #F2F0F1;
+    --gris-claro: #E4E1E3;
+    --texto-oscuro: #1F1B1C;
+    --gris-texto: #6B6768;
+}
+
+/* ========= HERO ========= */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 65px);
+    margin-top: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    background: url('../Imagenes/fondo.jpg') center/cover no-repeat;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(211,15,35,0.28);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 560px;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.hero-content h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.05;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.hero-content p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.02rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: var(--blanco);
+    color: var(--rojo-principal);
+    border: 2px solid var(--blanco);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+}
+
+.btn-secondary {
+    border: 2px solid rgba(255,255,255,0.6);
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.2);
+    border-color: #fff;
+}
+
+/* ========= ANIMACIONES ========= */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(100px); }
+    to { opacity: 1; transform: translateX(-30px); }
+}
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 968px) {
+    .hero { flex-direction: column; padding: 60px 6%; text-align: center; min-height: auto; }
+    .hero-content h1 { font-size: 3rem; }
+    .hero-content p { font-size: 0.95rem; }
+    .cta-buttons { justify-content: center; }
+    @keyframes fadeInRight {
+        from { opacity: 0; transform: translateX(100px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-content h1 { font-size: 2.3rem; }
+}
+
+*, *::before, *::after {
+    font-family: 'Roboto Slab', serif !important;
+}

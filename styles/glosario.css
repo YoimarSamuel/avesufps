@@ -1,0 +1,274 @@
+﻿/* =================================================================
+   glosario.css  â€”  Minimalista, profesional (hero compartido con catÃ¡logo)
+   Paleta: rojo institucional #D30F23, neutros, tipografÃ­a Roboto / Roboto Slab
+   ================================================================= */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --rojo-principal: #D30F23;
+    --rojo-oscuro:    #A30B1B;
+    --rojo-brillante: #E03143;
+    --blanco:         #ffffff;
+    --gris-suave:     #F2F0F1;
+    --gris-claro:     #E4E1E3;
+    --texto-oscuro:   #1F1B1C;
+    --gris-texto:     #6B6768;
+    --radio:          14px;
+    --trans:          0.25s ease;
+    --max-ancho:      1200px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url('../Imagenes/fondo.jpg') center/cover fixed no-repeat;
+    color: var(--texto-oscuro);
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Hero (igual que catÃ¡logo) ---------- */
+.hero-catalogo {
+    position: relative;
+    width: 100%;
+    margin-top: 80px;
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 30px 16px 30px;
+    color: var(--blanco);
+}
+.hero-catalogo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+.hero-info {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    max-width: 1163px;
+}
+.hero-info h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--blanco);
+    margin-bottom: 4px;
+}
+.hero-info p {
+    font-size: 1.05rem;
+    opacity: 0.92;
+    margin: 0 0 1.5rem 0;
+}
+
+/* Buscador dentro del hero */
+.hero-catalogo .caja-buscador {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: none;
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: block;
+    width: 100%;
+    max-width: 1163px;
+    margin: 0 auto;
+}
+.hero-catalogo .buscador-fila {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+}
+.hero-catalogo .input-buscar {
+    flex: 1 1 240px;
+    width: auto;
+    min-width: 0;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: var(--blanco);
+    padding: 12px 18px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    outline: none;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+.hero-catalogo .input-buscar::placeholder { color: rgba(255,255,255,0.7); }
+.hero-catalogo .input-buscar:focus {
+    background: rgba(255,255,255,0.25);
+    border-color: var(--blanco);
+}
+.hero-catalogo .btn-buscar {
+    background: var(--rojo-principal);
+    border: none;
+    color: var(--blanco);
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hero-catalogo .btn-buscar:hover {
+    background: var(--rojo-oscuro);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(211,15,35,0.4);
+}
+
+/* ---------- Main ---------- */
+.glosario-main { max-width: var(--max-ancho); margin: 0 auto; padding: 18px 20px 60px 20px; }
+
+/* Category section */
+.category-section { margin-bottom: 3.5rem; }
+.category-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.35);
+}
+.category-header h2 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--blanco);
+}
+.category-count {
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--rojo-principal);
+    background: var(--blanco);
+    border: 2px solid var(--rojo-principal);
+    padding: .2rem .8rem;
+    border-radius: 999px;
+}
+
+/* Grid */
+.grid-glosario {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Card */
+.card {
+    background: var(--blanco);
+    border-radius: var(--radio);
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.card:focus-visible {
+    outline: 2px solid var(--rojo-principal);
+    outline-offset: 2px;
+}
+.card-media { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--gris-claro); }
+.card-media img { width: 100%; height: 100%; object-fit: cover; }
+.card-body { padding: 1rem 1.1rem 1.2rem; text-align: center; }
+.card-title {
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--texto-oscuro);
+    line-height: 1.3;
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 60px 24px;
+    color: var(--texto-oscuro);
+    font-size: 1.1rem;
+    background: var(--blanco);
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+}
+
+/* ---------- Modal ---------- */
+.modal {
+    position: fixed; inset: 0; z-index: 2000;
+    display: none; align-items: center; justify-content: center;
+    background: rgba(0,0,0,0.85);
+    padding: 1.5rem;
+    opacity: 0; transition: opacity .3s ease;
+}
+.modal.active { display: flex; opacity: 1; }
+.modal-close,
+.modal-nav {
+    position: absolute;
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    color: var(--blanco);
+    cursor: pointer;
+    transition: background var(--trans), border-color var(--trans);
+}
+.modal-close:hover,
+.modal-nav:hover { background: var(--rojo-principal); border-color: var(--rojo-principal); }
+.modal-close { top: 1.5rem; right: 1.5rem; }
+.modal-prev { left: 1.5rem; top: 50%; transform: translateY(-50%); }
+.modal-next { right: 1.5rem; top: 50%; transform: translateY(-50%); }
+
+.modal-content { max-width: 90vw; max-height: 85vh; text-align: center; }
+.modal-img { max-width: 100%; max-height: 75vh; border-radius: 14px; box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
+.modal-info { margin-top: 1rem; color: var(--blanco); }
+.modal-cat {
+    display: inline-block;
+    font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px;
+    background: var(--rojo-principal);
+    padding: .3rem .8rem; border-radius: 999px; margin-bottom: .5rem;
+}
+.modal-title { font-size: 1.5rem; font-weight: 700; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .hero-catalogo { padding: 22px 20px 14px; }
+    .hero-info h1 { font-size: 1.8rem; }
+    .hero-info p { font-size: .95rem; }
+    .hero-catalogo .caja-buscador { padding: 10px 12px; }
+    .grid-glosario { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }    .modal-close, .modal-nav { width: 38px; height: 38px; }
+}
+@media (max-width: 600px) {
+    .hero-catalogo .buscador-fila { flex-direction: column; }
+    .hero-catalogo .btn-buscar { width: 100%; }
+}
+@media (max-width: 480px) {
+    .grid-glosario { grid-template-columns: 1fr; }
+    .category-header { flex-direction: column; align-items: flex-start; gap: .4rem; }
+}
+
+/* Visually hidden utility */
+.visually-hidden {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+*, *::before, *::after {
+    font-family: 'Roboto Slab', serif !important;
+}
+
+/* Velo translucido sobre el fondo (efecto vidrio suave) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: -1;
+    pointer-events: none;
+}
